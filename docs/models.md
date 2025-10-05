@@ -80,9 +80,9 @@ A project is a model representing an Agile Project. Projects are per organizatio
 
 `priority: int` the priority of the task, bounded to 1-5
 
-`assignee: User` reference to the `User` object for this task.
+`user: User` reference to the `User` object for this task.
 
-`sprint: Spring` reference to the `Sprint` object for this task.
+`sprint: Sprint` reference to the `Sprint` object for this task.
 
 
 

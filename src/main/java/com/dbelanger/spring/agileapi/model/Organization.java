@@ -73,10 +73,6 @@ public class Organization {
         this.name = name;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
     public String getSlug() {
         return slug;
     }
@@ -85,5 +81,11 @@ public class Organization {
         this.slug = slug;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }

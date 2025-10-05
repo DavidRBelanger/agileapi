@@ -12,24 +12,23 @@
 
 package com.dbelanger.spring.agileapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
 public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String name;
 
     @Column(nullable = true, unique = false)
     private String description;
 
-    @Column(nullable = false, unique = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "organization_id", nullable = false)
     private Organization organization;
 
     public Project() {
@@ -73,6 +72,4 @@ public class Project {
     public void setOrganization(Organization organization) {
         this.organization = organization;
     }
-
-
 }
