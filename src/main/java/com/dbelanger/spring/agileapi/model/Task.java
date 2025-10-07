@@ -1,25 +1,15 @@
-/// ============================================================
-/// Class: Task
-/// Package: com.dbelanger.spring.agileapi.model
-/// Project: Agile REST API
-/// ============================================================
-/// `id: Long` an identifier for the task.
-/// `title: String` the title of the task.
-/// `description: String (not required)` the description of the task, optional.
-/// `status: Enum: T0_DO, IN_PROGRESS, DONE, BLOCKED` the status of the task.
-/// `priority: int` the priority of the task, bounded to 1-5
-/// `user: User` reference to the `User` object for this task.
-/// `sprint: Sprint` reference to the `Sprint` object for this task.
-/// ============================================================
-
 package com.dbelanger.spring.agileapi.model;
 
 import jakarta.persistence.*;
 
+@Entity
 public class Task {
 
     public enum Status {
-        TO_DO, IN_PROGRESS, DONE, BLOCKED
+        TO_DO,
+        IN_PROGRESS,
+        DONE,
+        BLOCKED
     }
 
     @Id
@@ -32,31 +22,32 @@ public class Task {
     @Column
     private String description;
 
-    @Column
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Status status;
 
-    @Column
-    private int priority;
+    @Column(nullable = false)
+    private int priority; // 1–5
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "assignee_id", nullable = false)
+    private User assignee;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "sprint_id", nullable = false)
-    private Sprint spring;
+    private Sprint sprint;
 
-    public Task(long id, String title, String description, Status status, int priority, User user, Sprint spring) {
+    public Task() {
+    }
+
+    public Task(long id, String title, String description, Status status, int priority, User assignee, Sprint sprint) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.status = status;
         this.priority = priority;
-        this.user = user;
-        this.spring = spring;
-    }
-
-    public Task() {
+        this.assignee = assignee;
+        this.sprint = sprint;
     }
 
     public long getId() {
@@ -99,19 +90,19 @@ public class Task {
         this.priority = priority;
     }
 
-    public User getUser() {
-        return user;
+    public User getAssignee() {
+        return assignee;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAssignee(User assignee) {
+        this.assignee = assignee;
     }
 
-    public Sprint getSpring() {
-        return spring;
+    public Sprint getSprint() {
+        return sprint;
     }
 
-    public void setSpring(Sprint spring) {
-        this.spring = spring;
+    public void setSprint(Sprint sprint) {
+        this.sprint = sprint;
     }
 }

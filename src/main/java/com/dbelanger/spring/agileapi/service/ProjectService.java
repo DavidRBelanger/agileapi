@@ -1,37 +1,42 @@
 package com.dbelanger.spring.agileapi.service;
 
 import com.dbelanger.spring.agileapi.model.Organization;
-import com.dbelanger.spring.agileapi.repository.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.dbelanger.spring.agileapi.model.Project;
+import com.dbelanger.spring.agileapi.model.User;
+import com.dbelanger.spring.agileapi.repository.ProjectRepository;
+import org.springframework.stereotype.Service;
 
+import java.nio.file.AccessDeniedException;
 import java.util.List;
 
 @Service
 public class ProjectService {
 
     private final ProjectRepository projectRepository;
+    private final OrganizationService organizationService;
 
-    public ProjectService(ProjectRepository projectRepository) {
+    public ProjectService(ProjectRepository projectRepository, OrganizationService organizationService) {
         this.projectRepository = projectRepository;
+        this.organizationService = organizationService;
     }
 
-    public List<Project> getProjectsByOrganizationId(long id) {
-        return projectRepository.findAllByOrganizationId(id);
+    public List<Project> getProjectsByOrganizationId(long orgId, User user) throws AccessDeniedException {
+        organizationService.assertUserInOrganization(user, new Organization(orgId));
+        return projectRepository.findAllByOrganization_Id(orgId);
     }
 
-    public Project createNewProject(Project project) {
+    public Project createNewProject(Project project, User user) throws AccessDeniedException {
+        organizationService.assertUserInOrganization(user, project.getOrganization());
         return projectRepository.save(project);
     }
 
-    public Project getProjectById(long id) {
-        return projectRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Project at " + id + " not found."));
+    public Project getProjectById(long projectId, User user) throws AccessDeniedException {
+        return projectRepository.findByIdAndOrganization_Id(projectId, user.getOrganization().getId())
+                .orElseThrow(() -> new IllegalArgumentException("Project at " + projectId + " not found."));
     }
 
-    public Project updateProjectById(Project updatedProject, long id) {
-        Project project = projectRepository.findById(id)
+    public Project updateProjectById(Project updatedProject, long id, User user) throws AccessDeniedException {
+        Project project = projectRepository.findByIdAndOrganization_Id(id, user.getOrganization().getId())
                 .orElseThrow(() -> new IllegalArgumentException("Project at " + id + " not found."));
 
         if (updatedProject.getName() != null) {
@@ -45,9 +50,10 @@ public class ProjectService {
         return projectRepository.save(project);
     }
 
-    public void deleteProjectById(long id) {
-        projectRepository.findById(id)
+    public void deleteProjectById(long id, User user) throws AccessDeniedException {
+        Project project = projectRepository.findByIdAndOrganization_Id(id, user.getOrganization().getId())
                 .orElseThrow(() -> new IllegalArgumentException("Project at " + id + " not found."));
-        projectRepository.deleteById(id);
+
+        projectRepository.delete(project);
     }
 }

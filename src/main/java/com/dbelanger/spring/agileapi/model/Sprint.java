@@ -33,8 +33,10 @@ public class Sprint {
     @Column
     private LocalDateTime endDate;
 
-    @Column(nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "project_id", nullable = false)
     private Project project;
+
 
     public Sprint(long id, String name, LocalDateTime startDate, LocalDateTime endDate, Project project) {
         this.id = id;
