@@ -1,0 +1,68 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.dbelanger.spring:agileapi >--------------------
+[INFO] Building agileapi 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.3.4:run (default-cli) > test-compile @ agileapi >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agileapi ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ agileapi ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ agileapi ---
+[INFO] skip non existing resourceDirectory /home/david-belanger/dev/agileapi/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ agileapi ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.3.4:run (default-cli) < test-compile @ agileapi <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.3.4:run (default-cli) @ agileapi ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2025-10-07T18:40:23.481-04:00  INFO 65710 --- [agileapi] [  restartedMain] c.d.spring.agileapi.AgileapiApplication  : Starting AgileapiApplication using Java 21.0.8 with PID 65710 (/home/david-belanger/dev/agileapi/target/classes started by david-belanger in /home/david-belanger/dev/agileapi)
+2025-10-07T18:40:23.482-04:00  INFO 65710 --- [agileapi] [  restartedMain] c.d.spring.agileapi.AgileapiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-10-07T18:40:23.507-04:00  INFO 65710 --- [agileapi] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-07T18:40:23.507-04:00  INFO 65710 --- [agileapi] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-07T18:40:23.936-04:00  INFO 65710 --- [agileapi] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-07T18:40:24.033-04:00  INFO 65710 --- [agileapi] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 5 JPA repository interfaces.
+2025-10-07T18:40:24.462-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-07T18:40:24.476-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-07T18:40:24.476-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2025-10-07T18:40:24.501-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-07T18:40:24.502-04:00  INFO 65710 --- [agileapi] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 995 ms
+2025-10-07T18:40:24.531-04:00  INFO 65710 --- [agileapi] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-07T18:40:24.676-04:00  INFO 65710 --- [agileapi] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/agiledb user=SA
+2025-10-07T18:40:24.677-04:00  INFO 65710 --- [agileapi] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-07T18:40:24.685-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/agiledb'
+2025-10-07T18:40:24.760-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-07T18:40:24.793-04:00  INFO 65710 --- [agileapi] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-10-07T18:40:24.814-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-07T18:40:25.004-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-07T18:40:25.034-04:00  WARN 65710 --- [agileapi] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-07T18:40:25.647-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-07T18:40:25.695-04:00  INFO 65710 --- [agileapi] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-07T18:40:26.063-04:00  WARN 65710 --- [agileapi] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-07T18:40:26.455-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-07T18:40:26.480-04:00  WARN 65710 --- [agileapi] [  restartedMain] org.jline                                : Unable to create a system terminal, creating a dumb terminal (enable debug logging for more information)
+2025-10-07T18:40:26.630-04:00  INFO 65710 --- [agileapi] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-07T18:40:26.635-04:00  INFO 65710 --- [agileapi] [  restartedMain] c.d.spring.agileapi.AgileapiApplication  : Started AgileapiApplication in 3.364 seconds (process running for 3.584)
+shell:>2025-10-07T18:42:40.877-04:00  WARN 65710 --- [agileapi] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m16s99ms4µs568ns).
+2025-10-07T18:42:40.898-04:00  INFO 65710 --- [agileapi] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-07T18:42:40.900-04:00  INFO 65710 --- [agileapi] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-07T18:42:40.901-04:00  INFO 65710 --- [agileapi] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

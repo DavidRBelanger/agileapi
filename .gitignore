@@ -31,3 +31,16 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Database Files ###
+data/
+*.db
+*.mv.db
+*.trace.db
+
+### Production Secrets ###
+# NEVER commit production properties with real secrets!
+application-prod.properties
+.env
+*.key
+*.pem

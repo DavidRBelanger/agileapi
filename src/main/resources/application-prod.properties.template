@@ -1,0 +1,39 @@
+# Production Configuration Template
+# Copy this to application-prod.properties and customize for your production environment
+# DO NOT commit application-prod.properties with real secrets to version control!
+
+spring.application.name=agileapi
+
+# Database configuration - PostgreSQL recommended for production
+# spring.datasource.url=jdbc:postgresql://localhost:5432/agileapi_prod
+# spring.datasource.username=${DB_USERNAME}
+# spring.datasource.password=${DB_PASSWORD}
+# spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+# OR use H2 file-based for simple deployments
+spring.datasource.url=jdbc:h2:file:./data/agileapi_prod
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+# JPA/Hibernate configuration
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+
+# DISABLE H2 Console in production!
+spring.h2.console.enabled=false
+
+# JWT Configuration - MUST use environment variables in production!
+# Use strong, randomly generated secret key (at least 256 bits for HS256)
+# Generate with: openssl rand -base64 64
+jwt.secret=${JWT_SECRET}
+jwt.expiration=${JWT_EXPIRATION:86400000}
+
+# Logging
+logging.level.root=INFO
+logging.level.com.dbelanger.spring.agileapi=INFO
+
+# Security Headers
+server.error.include-message=never
+server.error.include-stacktrace=never

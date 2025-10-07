@@ -1,27 +1,40 @@
-package com.dbelanger.spring.agileapi.service;
-
-import com.dbelanger.spring.agileapi.model.User;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
-import org.springframework.stereotype.Service;
+package com.dbelanger.spring.agileapi.security;
 
 import java.security.Key;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.dbelanger.spring.agileapi.model.User;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
+
 @Service
 public class JwtService {
 
-    private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-    private static final long EXPIRATION_TIME_MS = 1000 * 60 * 60 * 24; // 24h
+    @Value("${jwt.secret}")
+    private String secretKey;
+
+    @Value("${jwt.expiration:86400000}") // Default 24 hours
+    private long expirationTime;
+
+    private Key key;
+
+    @PostConstruct
+    public void init() {
+        this.key = Keys.hmacShaKeyFor(secretKey.getBytes());
+    }
 
     public String generateToken(User user) {
         return Jwts.builder()
                 .setSubject(String.valueOf(user.getId()))
                 .claim("organizationId", user.getOrganization().getId())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME_MS))
+                .setExpiration(new Date(System.currentTimeMillis() + expirationTime))
                 .signWith(key)
                 .compact();
     }

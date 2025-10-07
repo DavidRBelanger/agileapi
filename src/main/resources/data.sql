@@ -1,0 +1,14 @@
+-- Seed data for development
+-- NOTE: Organizations are now created during user registration
+-- Users create their own organization when they sign up
+-- This ensures proper security and multi-tenancy
+
+-- Example: When a user registers, they provide:
+-- {
+--   "email": "user@example.com",
+--   "password": "password123",
+--   "name": "John Doe",
+--   "organizationName": "Acme Corporation",
+--   "organizationSlug": "acme"
+-- }
+-- This creates BOTH the organization AND the first user (who becomes the de facto admin)
