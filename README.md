@@ -8,7 +8,7 @@ A production-ready REST API for agile project management, built with modern Spri
 
 ---
 
-## 📖 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -25,7 +25,7 @@ A production-ready REST API for agile project management, built with modern Spri
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 AgileAPI is a secure, multi-tenant REST API designed for managing agile software development workflows. The application demonstrates modern backend development practices including JWT authentication, layered architecture, comprehensive testing, and production-ready configuration management.
 
@@ -38,29 +38,29 @@ AgileAPI is a secure, multi-tenant REST API designed for managing agile software
 
 ---
 
-## ✨ Features
+##  Features
 
 ### Core Functionality
-- 🏢 **Multi-tenant Organization Management** - Complete data isolation between organizations
-- 👥 **User Management** - Secure registration, authentication, and profile management
-- 📊 **Project Management** - Create and manage multiple projects per organization
-- 🏃 **Sprint Planning** - Time-boxed iterations with date validation
-- ✅ **Task Tracking** - Granular task management with priorities, statuses, and assignments
-- 🔍 **Advanced Filtering** - Query tasks by status, priority, and assignee
+-  **Multi-tenant Organization Management** - Complete data isolation between organizations
+-  **User Management** - Secure registration, authentication, and profile management
+-  **Project Management** - Create and manage multiple projects per organization
+-  **Sprint Planning** - Time-boxed iterations with date validation
+-  **Task Tracking** - Granular task management with priorities, statuses, and assignments
+-  **Advanced Filtering** - Query tasks by status, priority, and assignee
 
 ### Security Features
-- 🔐 **JWT Authentication** - Stateless, token-based authentication with configurable expiration
-- 🔒 **BCrypt Password Hashing** - Industry-standard password security
-- 🏛️ **Organization-based Access Control** - Multi-tenant isolation at the database level
-- 🛡️ **Input Validation** - Comprehensive request validation with clear error messages
-- 🚫 **Authorization Checks** - Every endpoint validates user permissions
+-  **JWT Authentication** - Stateless, token-based authentication with configurable expiration
+-  **BCrypt Password Hashing** - Industry-standard password security
+-  **Organization-based Access Control** - Multi-tenant isolation at the database level
+-  **Input Validation** - Comprehensive request validation with clear error messages
+-  **Authorization Checks** - Every endpoint validates user permissions
 
 ### Developer Experience
-- ✅ **Comprehensive Unit Tests** - High test coverage with JUnit 5 and Mockito
-- 📝 **Input Validation** - Clear, actionable error messages for API consumers
-- 🔄 **Persistent Storage** - File-based H2 database (easily swappable for PostgreSQL)
-- 📚 **API Documentation** - Detailed endpoint documentation with examples
-- 🌍 **Environment Profiles** - Separate configurations for dev, test, and production
+-  **Comprehensive Unit Tests** - High test coverage with JUnit 5 and Mockito
+-  **Input Validation** - Clear, actionable error messages for API consumers
+-  **Persistent Storage** - File-based H2 database (easily swappable for PostgreSQL)
+-  **API Documentation** - Detailed endpoint documentation with examples
+-  **Environment Profiles** - Separate configurations for dev, test, and production
 
 ---
 
@@ -92,7 +92,7 @@ AgileAPI is a secure, multi-tenant REST API designed for managing agile software
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Layered Architecture
 ```
@@ -138,7 +138,7 @@ Organization (1) ──── (*) Users
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - **Java 21** or higher ([Download](https://adoptium.net/))
@@ -344,7 +344,7 @@ For detailed documentation with all endpoints, request/response examples, and er
 
 ---
 
-## 🔒 Security
+##  Security
 
 ### Authentication & Authorization
 
@@ -387,18 +387,18 @@ All inputs are validated before processing:
 - Organization slug format (lowercase, numbers, hyphens only)
 
 ### Security Best Practices Implemented
-✅ Password hashing with BCrypt  
-✅ JWT tokens with expiration  
-✅ Input validation on all endpoints  
-✅ SQL injection prevention via JPA/Hibernate  
-✅ CORS configuration  
-✅ Stateless session management  
-✅ Organization-based access control  
-✅ Secure configuration management (secrets in environment variables)
+ Password hashing with BCrypt  
+ JWT tokens with expiration  
+ Input validation on all endpoints  
+ SQL injection prevention via JPA/Hibernate  
+ CORS configuration  
+ Stateless session management  
+ Organization-based access control  
+ Secure configuration management (secrets in environment variables)
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Running Tests
 
@@ -464,7 +464,7 @@ For detailed test documentation, see [TEST_COVERAGE.md](docs/TEST_COVERAGE.md).
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 ### Application Profiles
 
@@ -551,7 +551,7 @@ Password: (leave empty)
 
 ---
 
-## 🚢 Deployment
+##  Deployment
 
 ### Local Deployment
 
@@ -608,7 +608,7 @@ Compatible with:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 agileapi/
@@ -686,7 +686,7 @@ agileapi/
 
 ---
 
-## 💡 Key Learnings & Highlights
+##  Key Learnings & Highlights
 
 ### Technical Challenges Solved
 
@@ -739,7 +739,7 @@ agileapi/
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 This is a portfolio project, but suggestions and feedback are welcome!
 
@@ -751,13 +751,13 @@ This is a portfolio project, but suggestions and feedback are welcome!
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👤 Author
+##  Author
 
 **David Belanger**
 
@@ -767,7 +767,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with [Spring Boot](https://spring.io/projects/spring-boot)
 - Secured with [JJWT](https://github.com/jwtk/jjwt)
@@ -775,7 +775,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Contact & Questions
+##  Contact & Questions
 
 If you're a recruiter or hiring manager reviewing this project:
 
@@ -797,7 +797,7 @@ Feel free to reach out - I'd love to discuss this project!
 
 <div align="center">
 
-**⭐ If you find this project interesting, please give it a star! ⭐**
+** If you find this project interesting, please give it a star! **
 
 Made with ☕ and Spring Boot
 
