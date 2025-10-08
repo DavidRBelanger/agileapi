@@ -29,13 +29,6 @@ A production-ready REST API for agile project management, built with modern Spri
 
 AgileAPI is a secure, multi-tenant REST API designed for managing agile software development workflows. The application demonstrates modern backend development practices including JWT authentication, layered architecture, comprehensive testing, and production-ready configuration management.
 
-**Why this project?** This showcases my ability to:
-- Design and implement secure RESTful APIs
-- Apply enterprise security patterns (JWT, BCrypt, role-based access)
-- Write clean, testable code following SOLID principles
-- Manage multi-tenant data isolation
-- Build production-ready applications with proper configuration management
-
 ---
 
 ##  Features
@@ -64,7 +57,7 @@ AgileAPI is a secure, multi-tenant REST API designed for managing agile software
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend Framework
 - **Java 21** - Latest LTS version with modern language features
